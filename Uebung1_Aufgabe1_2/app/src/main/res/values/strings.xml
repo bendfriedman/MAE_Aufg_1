@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Uebung1_Aufgabe1_2</string>
+    <string name="loremIpsumText">Lorem ipsum dolor sit amet</string>
+    <string name="hello_ben">Hello Ben!</string>
+    <string name="diff_size">text with different size</string>
+    <string name="link_text">
+    <![CDATA[
+    <a href="https://www.google.com">Lorem ipsum</a>
+    ]]>
+</string>
+
 </resources>

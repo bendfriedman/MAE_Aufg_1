@@ -1,11 +1,14 @@
 package com.example.uebung1_aufgabe1_2
 
 import android.os.Bundle
+import android.text.Html.fromHtml
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.method.LinkMovementMethod
+import android.text.style.RelativeSizeSpan
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,14 +16,31 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-        val textView = findViewById<TextView>(R.id.myText)
-        textView.text = "Hello Ben!"
+        val textView = findViewById<TextView>(R.id.textDiffSize)
+        val text = "Lorem ipsum dolor sit amet"
+        val spannable = SpannableString(text)
+        // text kleiner
+        spannable.setSpan(
+            RelativeSizeSpan(0.8f),  // 80%
+            0,
+            5,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        // text größer
+        spannable.setSpan(
+            RelativeSizeSpan(1.5f),  // 150%
+            6,
+            text.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        textView.text = spannable
+
+        val textLink = findViewById<TextView>(R.id.textLink)
+        textLink.text = fromHtml(getString(R.string.link_text))
+        textLink.movementMethod = LinkMovementMethod.getInstance()
 
     }
+
+
 }
