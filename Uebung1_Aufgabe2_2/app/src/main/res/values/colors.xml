@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="c1">#FFFFFFFF</color>
+    <color name="c2">#FFc1c100</color>
+    <color name="c3">#FF00c1c1</color>
+    <color name="c4">#FF00c100</color>
+    <color name="c5">#FFc200c1</color>
+    <color name="c6">#FFc10100</color>
+    <color name="c7">#FF0000c0</color>
+    <color name="c8">#FF000000</color>
+
+
+    Color(0xFFc1c100),
+    Color(0xFF00c1c1),
+    Color(0xFF00c100),
+    Color(0xFFc200c1),
+    Color(0xFFc10100),
+    Color(0xFF0000c0),
+
+</resources>
