@@ -41,12 +41,14 @@ fun Calculator() {
 
 
     fun onEquals() {
+        if (display2.value.isEmpty()) return
         secondOperand.doubleValue = display2.value.toDouble()
         when (operator.value) {
             "/" -> result.doubleValue = firstOperand.doubleValue / secondOperand.doubleValue
             "*" -> result.doubleValue = firstOperand.doubleValue * secondOperand.doubleValue
             "-" -> result.doubleValue = firstOperand.doubleValue - secondOperand.doubleValue
             "+" -> result.doubleValue = firstOperand.doubleValue + secondOperand.doubleValue
+            else -> result.doubleValue = secondOperand.doubleValue
         }
         firstOperand.doubleValue = result.doubleValue
         display1.value = result.doubleValue.toString()
