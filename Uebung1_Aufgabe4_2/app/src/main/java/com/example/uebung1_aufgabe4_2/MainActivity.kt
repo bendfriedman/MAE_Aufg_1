@@ -1,5 +1,6 @@
 package com.example.uebung1_aufgabe4_2
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val display2 = findViewById<TextView>(R.id.display2)
 
         fun onEquals() {
-            secondOperand = display2.text.toString().toDoubleOrNull() ?: return
+            secondOperand = display2.text.toString().toDoubleOrNull() ?: return // ?: <=> ?? in JS
             when (operator) {
                 "/" -> result = firstOperand / secondOperand
                 "*" -> result = firstOperand * secondOperand
@@ -32,15 +33,20 @@ class MainActivity : AppCompatActivity() {
             operator = ""
         }
 
+        @SuppressLint("SetTextI18n")
         fun onNumber(number: String) {
             if (display1.text.isNotEmpty() && operator.isEmpty()) {
                 display1.text = ""
                 firstOperand = 0.0
             }
+            if(display2.text == "0") {
+                display2.text = ""
+            }
             display2.text = "${display2.text}$number"
             secondOperand = display2.text.toString().toDoubleOrNull() ?: 0.0
         }
 
+        @SuppressLint("SetTextI18n")
         fun onOperator(op: String) {
             if (display2.text.isEmpty()) {
                 if (display1.text.isNotEmpty()) {
@@ -71,7 +77,6 @@ class MainActivity : AppCompatActivity() {
             display2.text = ""
         }
 
-        // Buttons verdrahten
         mapOf(
             R.id.btn0 to "0", R.id.btn1 to "1", R.id.btn2 to "2",
             R.id.btn3 to "3", R.id.btn4 to "4", R.id.btn5 to "5",
