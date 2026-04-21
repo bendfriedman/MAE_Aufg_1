@@ -54,7 +54,7 @@ fun TempConverter() {
             val fahrenheit = input.value.toDoubleOrNull()
             if (fahrenheit != null) {
                 val res: Double = (fahrenheit - 32.0) * 5.0 / 9.0
-                result.value = "$res °C"
+                result.value = "%.2f °C".format(res)
             } else {
                 result.value = "Missing input!"
             }
@@ -65,7 +65,7 @@ fun TempConverter() {
             val celsius = input.value.toDoubleOrNull()
             if (celsius != null) {
                 val res: Double = (celsius * 9.0) / 5.0 + 32
-                result.value = "$res °F"
+                result.value = "%.2f °F".format(res)
             } else {
                 result.value = "Missing input!"
             }

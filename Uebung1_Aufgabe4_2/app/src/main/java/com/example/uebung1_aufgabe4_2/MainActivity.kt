@@ -6,11 +6,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-
-    private var firstOperand = 0.0
-    private var secondOperand = 0.0
-    private var operator = ""
-    private var result = 0.0
+    var firstOperand = 0.0
+    var secondOperand = 0.0
+    var operator = ""
+    var result = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
